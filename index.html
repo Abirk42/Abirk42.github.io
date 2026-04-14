@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Abir Hossain Khondoker | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#ffdbcc",
+                        "surface-container": "#f1eee4",
+                        "primary-container": "#2d4b37",
+                        "primary-fixed-dim": "#adcfb4",
+                        "surface-container-low": "#f7f3e9",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#31312a",
+                        "tertiary-fixed": "#ffdeaa",
+                        "surface-tint": "#466550",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#e8a610",
+                        "tertiary": "#3f2a00",
+                        "secondary-container": "#ff915b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fdf9ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#722b00",
+                        "on-secondary-fixed": "#351000",
+                        "on-secondary-fixed-variant": "#7b2f00",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#2f4d39",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "secondary-fixed-dim": "#ffb694",
+                        "surface-dim": "#dddad0",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1c1c16",
+                        "secondary": "#9b4514",
+                        "inverse-primary": "#adcfb4",
+                        "on-primary-container": "#99baa1",
+                        "on-tertiary-fixed": "#271900",
+                        "inverse-on-surface": "#f4f0e6",
+                        "background": "#fdf9ef",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#c8ebd0",
+                        "outline": "#727972",
+                        "tertiary-fixed-dim": "#ffba2c",
+                        "on-primary-fixed": "#022110",
+                        "surface": "#fdf9ef",
+                        "surface-variant": "#e6e2d8",
+                        "on-surface-variant": "#424843",
+                        "surface-container-high": "#ece8de",
+                        "on-surface": "#1c1c16",
+                        "tertiary-container": "#5c3f00",
+                        "primary": "#163422",
+                        "surface-container-highest": "#e6e2d8",
+                        "outline-variant": "#c2c8c0"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif"],
+                        body: ["Manrope"],
+                        label: ["Manrope"]
+                    }
+                },
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-surface">
+
+    <!-- ==================== TOP NAVIGATION ==================== -->
+    <nav class="fixed top-0 w-full z-50 bg-[#fdf9ef]/80 backdrop-blur-md border-b border-outline-variant/20">
+        <div class="flex justify-between items-center px-8 py-5 max-w-7xl mx-auto w-full">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-primary editorial-header">Abir.</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary hover:text-secondary transition-colors font-medium" href="#about">About</a>
+                <a class="text-primary hover:text-secondary transition-colors font-medium" href="#experience">Experience</a>
+                <a class="text-primary hover:text-secondary transition-colors font-medium" href="#skills">Skills</a>
+                <a class="text-primary hover:text-secondary transition-colors font-medium" href="#awards">Awards</a>
+                <a class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300" href="#contact">Get in touch!</a>
+            </div>
+            <button id="menuBtn" class="md:hidden">
+                <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full z-[60] bg-surface-container-lowest shadow-2xl p-8 flex flex-col gap-6">
+        <button id="closeMenuBtn" class="self-end">
+            <span class="material-symbols-outlined text-primary text-3xl">close</span>
+        </button>
+        <a class="text-primary hover:text-secondary transition-colors font-bold text-lg" href="#about" onclick="closeMenu()">About</a>
+        <a class="text-primary hover:text-secondary transition-colors font-bold text-lg" href="#experience" onclick="closeMenu()">Experience</a>
+        <a class="text-primary hover:text-secondary transition-colors font-bold text-lg" href="#skills" onclick="closeMenu()">Skills</a>
+        <a class="text-primary hover:text-secondary transition-colors font-bold text-lg" href="#awards" onclick="closeMenu()">Awards</a>
+        <a class="bg-secondary text-on-secondary px-6 py-3 rounded-full font-bold text-center hover:scale-105 transition-transform" href="#contact" onclick="closeMenu()">Get in touch!</a>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-[55] hidden" onclick="closeMenu()"></div>
+
+    <main class="pt-24">
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="about" class="relative px-8 py-20 lg:py-32 max-w-7xl mx-auto overflow-hidden">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="flex-1 z-10">
+                    <p class="text-secondary font-bold text-lg mb-4 animate-fade-in-up">Software Developer · AI Engineer · Problem Solver</p>
+                    <h1 class="editorial-header text-5xl sm:text-6xl lg:text-8xl text-primary leading-none mb-8 tracking-tight animate-fade-in-up delay-100">
+                        Hello, I'm <span class="text-secondary">Abir!</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-on-surface max-w-xl leading-relaxed mb-10 opacity-90 animate-fade-in-up delay-200">
+                        A highly motivated ICT student with a perfect <span class="font-bold text-secondary">7/7 GPA</span>, skilled in building scalable cloud-native solutions, automating complex workflows, and engineering AI-powered systems.
+                    </p>
+                    <div class="flex flex-wrap gap-4 animate-fade-in-up delay-300">
+                        <a href="#experience" class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-container transition-colors">View Experience</a>
+                        <div class="flex items-center gap-2 text-secondary font-bold px-4">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                            <span>Hobart, Tasmania</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 relative animate-fade-in-up delay-400">
+                    <!-- Floating cloud bubbles -->
+
+                    <!-- University of Tasmania -->
+                    <div class="cloud-bubble bg-primary text-on-primary animate-float hidden lg:flex" style="top: -20px; left: -20px; animation-delay: 0s;">
+                        <span class="material-symbols-outlined text-secondary-container text-base">school</span>
+                        University of Tasmania
+                    </div>
+
+                    <!-- CSIRO Summer Intern -->
+                    <div class="cloud-bubble bg-secondary text-on-secondary animate-float-slow hidden lg:flex" style="top: 100px; left: -50px; animation-delay: 0.6s;">
+                        <span class="material-symbols-outlined text-base">science</span>
+                        CSIRO Summer Intern
+                    </div>
+
+                    <!-- Microsoft Azure Certified -->
+                    <div class="cloud-bubble tail-left bg-primary text-on-primary animate-float hidden lg:flex" style="top: 70px; right: -30px; animation-delay: 1.2s;">
+                        <span class="material-symbols-outlined text-secondary-container text-base">verified</span>
+                        Microsoft Azure Certified
+                    </div>
+
+                    <!-- GPA 7/7 -->
+                    <div class="cloud-bubble tail-left bg-tertiary-container text-on-tertiary animate-float-slow hidden lg:flex" style="top: 200px; right: -40px; animation-delay: 1.8s;">
+                        <span class="material-symbols-outlined text-tertiary-fixed-dim text-base">emoji_events</span>
+                        GPA 7/7
+                    </div>
+
+                    <!-- Python Java JS -->
+                    <div class="cloud-bubble bg-primary-container text-on-primary animate-float hidden lg:flex" style="bottom: 60px; left: -40px; animation-delay: 2.4s;">
+                        <span class="material-symbols-outlined text-base">code</span>
+                        Python · Java · JS
+                    </div>
+
+                    <!-- Cyber Security -->
+                    <div class="cloud-bubble tail-top-left bg-inverse-surface text-inverse-on-surface animate-float-slow hidden lg:flex" style="bottom: -15px; right: 60px; animation-delay: 3s;">
+                        <span class="material-symbols-outlined text-base">shield</span>
+                        Cyber Security
+                    </div>
+
+                    <!-- Docker CI/CD -->
+                    <div class="cloud-bubble tail-left bg-primary-container text-on-primary animate-float hidden lg:flex" style="bottom: 100px; right: -45px; animation-delay: 3.6s;">
+                        <span class="material-symbols-outlined text-base">deployed_code</span>
+                        Docker · CI/CD
+                    </div>
+
+                    <!-- AI -->
+                    <div class="cloud-bubble bg-secondary text-on-secondary animate-float-slow hidden lg:flex" style="top: 220px; left: -30px; animation-delay: 4.2s;">
+                        <span class="material-symbols-outlined text-base">smart_toy</span>
+                        AI
+                    </div>
+
+                    <!-- GitHub Copilot -->
+                    <div class="cloud-bubble tail-left bg-inverse-surface text-inverse-on-surface animate-float hidden lg:flex" style="top: -10px; right: -35px; animation-delay: 4.8s;">
+                        <span class="material-symbols-outlined text-base">auto_awesome</span>
+                        GitHub Copilot
+                    </div>
+
+                    <!-- Claude Code -->
+                    <div class="cloud-bubble tail-top-right bg-inverse-surface text-inverse-on-surface animate-float-slow hidden lg:flex" style="bottom: -30px; left: 20px; animation-delay: 5.4s;">
+                        <span class="material-symbols-outlined text-secondary-container text-base">terminal</span>
+                        Claude Code
+                    </div>
+
+                    <div class="rounded-lg overflow-hidden border-8 border-surface-container-low shadow-2xl transform rotate-2">
+                        <img alt="Abir Hossain Khondoker" class="w-full h-[500px] object-cover object-top" src="image/pic.jpeg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EDUCATION & EXPERIENCE TIMELINES ==================== -->
+        <section id="experience" class="px-8 py-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+
+                <!-- Education -->
+                <div class="bg-primary text-on-primary p-10 rounded-lg">
+                    <h2 class="editorial-header text-4xl mb-12 flex items-center gap-4 reveal">
+                        Education <span class="h-px bg-on-primary/20 flex-1"></span>
+                    </h2>
+                    <div class="space-y-12">
+                        <div class="relative pl-12 border-l-2 border-secondary-container/40 reveal">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-secondary-container"></div>
+                            <span class="text-secondary-container font-bold mb-2 block">2024 — Present</span>
+                            <h4 class="text-2xl font-bold mb-1">Bachelor of ICT</h4>
+                            <p class="opacity-80">University of Tasmania, Australia</p>
+                            <div class="mt-4 flex items-center gap-2">
+                                <span class="bg-secondary-container/20 text-secondary-container px-4 py-1 rounded-full text-sm font-bold">GPA: 7/7</span>
+                            </div>
+                        </div>
+                        <div class="relative pl-12 border-l-2 border-secondary-container/40 reveal">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-secondary-container/30"></div>
+                            <span class="text-on-primary/50 font-bold mb-2 block">2023</span>
+                            <h4 class="text-2xl font-bold mb-1">Higher Secondary Certificate</h4>
+                            <p class="opacity-80">Cumilla Cadet College, Bangladesh</p>
+                            <div class="mt-4 flex items-center gap-2">
+                                <span class="bg-secondary-container/20 text-secondary-container px-4 py-1 rounded-full text-sm font-bold">GPA: 5/5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications nested inside Education -->
+                    <div class="bg-on-primary/20 text-on-primary p-8 rounded-lg mt-12 reveal">
+                        <h3 class="font-bold text-2xl mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Certifications
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-on-primary/20 pb-2">
+                                <span class="font-medium">AWS Cloud Practitioner</span>
+                                <span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-on-primary/20 pb-2">
+                                <span class="font-medium">Microsoft AZ-900</span>
+                                <span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relevant Coursework -->
+                    <div class="bg-on-primary/10 text-on-primary p-8 rounded-lg mt-6 reveal">
+                        <h3 class="font-bold text-2xl mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary-container text-2xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                            Relevant Coursework
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Software Engineering</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Data Structures & Algorithms</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Cyber Security</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Cloud Computing</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Database Design</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">AI & Machine Learning</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Web Development</span>
+                            <span class="bg-secondary-container/20 text-secondary-container px-3 py-1.5 rounded-full text-sm font-medium">Operating Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="bg-primary text-on-primary p-10 rounded-lg">
+                    <h2 class="editorial-header text-4xl mb-12 flex items-center gap-4 reveal">
+                        Experience <span class="h-px bg-on-primary/20 flex-1"></span>
+                    </h2>
+                    <div class="space-y-12">
+                        <!-- CSIRO (grouped) -->
+                        <div class="relative pl-12 border-l-2 border-secondary-container/40 reveal">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-secondary-container"></div>
+                            <!-- CSIRO Company Header -->
+                            <div class="flex items-center gap-3 mb-6">
+                                <img src="image/logos/csiro.png" alt="CSIRO" class="w-10 h-10 object-contain shrink-0 hidden sm:block" />
+                                <h4 class="text-xl font-bold opacity-80">CSIRO · Hobart, Tasmania</h4>
+                            </div>
+
+                            <!-- Role 1: Software Developer -->
+                            <div class="mb-8">
+                                <span class="text-secondary-container font-bold mb-2 block">Feb 2026 — Present</span>
+                                <h4 class="text-2xl font-bold mb-1">Software Developer Intern</h4>
+                                <ul class="mt-4 text-sm leading-relaxed space-y-2 opacity-80">
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Architected scalable, cloud-native data publishing pipelines for the RV Investigator</li>
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Leveraged GenAI tools (GitHub Copilot & LLMs) to optimize development</li>
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Collaborated on cross-functional code reviews ensuring operational excellence</li>
+                                </ul>
+                            </div>
+
+                            <!-- Divider between roles -->
+                            <div class="border-t border-secondary-container/20 my-6"></div>
+
+                            <!-- Role 2: Data Science Summer Intern -->
+                            <div>
+                                <span class="text-secondary-container font-bold mb-2 block">Nov 2025 — Feb 2026</span>
+                                <h4 class="text-2xl font-bold mb-1">Data Science Summer Intern</h4>
+                                <ul class="mt-4 text-sm leading-relaxed space-y-2 opacity-80">
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Automated data publishing for 12+ datasets with Docker & Kubernetes</li>
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> <span class="font-bold text-secondary-container">75% reduction</span> in manual workload through automated pipelines</li>
+                                    <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Built a user-friendly React Web UI for data configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Rapid Circle -->
+                        <div class="relative pl-12 border-l-2 border-secondary-container/40 reveal">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-secondary-container"></div>
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <span class="text-secondary-container font-bold mb-2 block">Mar 2026 — Present</span>
+                                    <h4 class="text-2xl font-bold mb-1">Agentic AI Engineer Intern</h4>
+                                    <p class="opacity-80">Rapid Circle | Hobart, Tasmania</p>
+                                </div>
+                                <img src="image/logos/rapid-circle.png" alt="Rapid Circle" class="w-16 h-16 object-contain shrink-0 hidden sm:block" />
+                            </div>
+                            <ul class="mt-4 text-sm leading-relaxed space-y-2 opacity-80">
+                                <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Developing rapid-deployment AI solutions to automate business processes</li>
+                                <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Conducting rigorous version control reviews for high code quality</li>
+                            </ul>
+                        </div>
+
+                        <!-- Peer Mentor -->
+                        <div class="relative pl-12 border-l-2 border-secondary-container/40 reveal">
+                            <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-secondary-container/30"></div>
+                            <div class="flex justify-between items-start gap-4">
+                                <div>
+                                    <span class="text-secondary-container font-bold mb-2 block">Oct 2025 — Present</span>
+                                    <h4 class="text-2xl font-bold mb-1">Specialist Peer Mentor</h4>
+                                    <p class="opacity-80">University of Tasmania</p>
+                                </div>
+                                <img src="image/logos/utas.png" alt="University of Tasmania" class="w-16 h-16 object-contain shrink-0 hidden sm:block" />
+                            </div>
+                            <ul class="mt-4 text-sm leading-relaxed space-y-2 opacity-80">
+                                <li class="flex gap-2"><span class="text-secondary-container mt-0.5">▸</span> Mentoring 15 students with personalized study plans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS TAG CLOUD ==================== -->
+        <section id="skills" class="px-8 py-24 bg-surface-container-low overflow-hidden">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="editorial-header text-4xl text-primary mb-6 reveal text-center">The Toolkit</h2>
+                <p class="text-on-surface/60 mb-16 text-lg reveal text-center">Hover any skill for context. Bigger means more battle-tested.</p>
+
+                <!-- ===== Coding Languages (LEFT) ===== -->
+                <div class="mb-14 reveal bg-primary rounded-2xl p-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">code</span>
+                        Coding Languages
+                    </h3>
+                    <div class="tag-cloud tag-cloud-left">
+                        <span class="tag tag-lg bg-white text-primary glow-green skill-pill">
+                            Python
+                            <span class="skill-tooltip">CSIRO pipelines & data automation</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-primary glow-green skill-pill">
+                            Java
+                            <span class="skill-tooltip">OOP, DSA & academic projects</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-primary glow-green skill-pill">
+                            JavaScript
+                            <span class="skill-tooltip">React UI at CSIRO</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-primary glow-green skill-pill">
+                            SQL
+                            <span class="skill-tooltip">Database design & queries</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-primary glow-green skill-pill">
+                            C++
+                            <span class="skill-tooltip">Systems programming & competitive coding</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-primary glow-green skill-pill">
+                            C#
+                            <span class="skill-tooltip">Application development</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-primary glow-green skill-pill">
+                            HTML
+                            <span class="skill-tooltip">Semantic markup & web structure</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-primary glow-green skill-pill">
+                            CSS
+                            <span class="skill-tooltip">This portfolio & responsive design</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== Cloud Certifications (RIGHT) ===== -->
+                <div class="mb-14 reveal bg-[#1e3a5f] rounded-2xl p-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4 flex items-center gap-2 justify-end">
+                        Cloud Certifications
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">cloud</span>
+                    </h3>
+                    <div class="tag-cloud tag-cloud-right">
+                        <span class="tag tag-lg bg-white text-[#1e3a5f] glow-blue skill-pill">
+                            <span class="material-symbols-outlined text-base">cloud</span>
+                            AZ-900
+                            <span class="skill-tooltip">Microsoft Azure Fundamentals certified</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#1e3a5f] glow-blue skill-pill">
+                            <span class="material-symbols-outlined text-base">smart_toy</span>
+                            AI-900
+                            <span class="skill-tooltip">Microsoft Azure AI Fundamentals certified</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#1e3a5f] glow-blue skill-pill">
+                            <span class="material-symbols-outlined text-base">shield</span>
+                            SC-900
+                            <span class="skill-tooltip">Microsoft Security Fundamentals certified</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#1e3a5f] glow-blue skill-pill">
+                            <span class="material-symbols-outlined text-base">cloud</span>
+                            AWS CCP
+                            <span class="skill-tooltip">AWS Cloud Practitioner certified</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== DevOps & Frameworks (LEFT) ===== -->
+                <div class="mb-14 reveal bg-[#6b1c2a] rounded-2xl p-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                        DevOps & Frameworks
+                    </h3>
+                    <div class="tag-cloud tag-cloud-left">
+                        <span class="tag tag-lg bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            <span class="material-symbols-outlined text-base">deployed_code</span>
+                            Docker
+                            <span class="skill-tooltip">Containerized 12+ datasets at CSIRO</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            Kubernetes
+                            <span class="skill-tooltip">Orchestration for fault-tolerant pipelines</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            CI/CD
+                            <span class="skill-tooltip">Automated build & deploy pipelines</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            <span class="material-symbols-outlined text-base">web</span>
+                            React
+                            <span class="skill-tooltip">Built data config Web UI at CSIRO</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            GitHub
+                            <span class="skill-tooltip">Version control & code reviews</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-[#6b1c2a] glow-maroon skill-pill">
+                            <span class="material-symbols-outlined text-base">bug_report</span>
+                            Kali Linux
+                            <span class="skill-tooltip">Penetration testing & security audits</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== AI & Vibe Coding (RIGHT) ===== -->
+                <div class="mb-14 reveal bg-[#4a1a6b] rounded-2xl p-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4 flex items-center gap-2 justify-end">
+                        AI & Vibe Coding
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                    </h3>
+                    <div class="tag-cloud tag-cloud-right">
+                        <span class="tag tag-lg bg-white text-[#4a1a6b] glow-purple skill-pill">
+                            <span class="material-symbols-outlined text-base">smart_toy</span>
+                            GitHub Copilot
+                            <span class="skill-tooltip">AI-assisted dev at CSIRO & Rapid Circle</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#4a1a6b] glow-purple skill-pill">
+                            <span class="material-symbols-outlined text-base">psychology</span>
+                            Claude Code
+                            <span class="skill-tooltip">AI agent-assisted development</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#4a1a6b] glow-purple skill-pill">
+                            <span class="material-symbols-outlined text-base">favorite</span>
+                            Lovable
+                            <span class="skill-tooltip">AI-powered rapid prototyping</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- ===== Professional / Soft Skills (LEFT) ===== -->
+                <div class="reveal bg-[#2d2d2d] rounded-2xl p-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">groups</span>
+                        Soft Skills
+                    </h3>
+                    <div class="tag-cloud tag-cloud-left">
+                        <span class="tag tag-lg bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">handshake</span>
+                            Team Collaboration
+                            <span class="skill-tooltip">Cross-functional work at CSIRO & Rapid Circle</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">bug_report</span>
+                            Problem Solving
+                            <span class="skill-tooltip">75% workload reduction via automated pipelines</span>
+                        </span>
+                        <span class="tag tag-md bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">description</span>
+                            Documentation
+                            <span class="skill-tooltip">Technical reports & API documentation</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">trending_up</span>
+                            Adaptability
+                            <span class="skill-tooltip">Rapid onboarding across diverse tech stacks</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">schedule</span>
+                            Time Management
+                            <span class="skill-tooltip">Balancing dual internships + full-time study</span>
+                        </span>
+                        <span class="tag tag-sm bg-white text-[#2d2d2d] glow-neutral skill-pill">
+                            <span class="material-symbols-outlined text-base">public</span>
+                            Multicultural Awareness
+                            <span class="skill-tooltip">International ambassador for City of Hobart & Study Tas</span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== KEY ACHIEVEMENTS ==================== -->
+        <section class="px-8 py-20 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="editorial-header text-4xl text-primary mb-16 reveal">Key Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-surface-container-lowest p-8 rounded-lg text-center reveal">
+                        <span class="text-6xl font-bold text-secondary editorial-header">75%</span>
+                        <p class="mt-4 font-bold text-primary text-lg">Workload Reduction</p>
+                        <p class="mt-2 text-sm text-on-surface/70">Engineered automated pipelines at CSIRO, demonstrating high-impact ownership</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-8 rounded-lg text-center reveal">
+                        <span class="text-6xl font-bold text-secondary editorial-header">12+</span>
+                        <p class="mt-4 font-bold text-primary text-lg">Datasets Automated</p>
+                        <p class="mt-2 text-sm text-on-surface/70">Fault-tolerant containerization via Docker and Kubernetes</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-8 rounded-lg text-center reveal">
+                        <span class="text-6xl font-bold text-secondary editorial-header">7/7</span>
+                        <p class="mt-4 font-bold text-primary text-lg">Perfect GPA</p>
+                        <p class="mt-2 text-sm text-on-surface/70">Bachelor of ICT at University of Tasmania</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== AWARDS & EXTRA-CURRICULAR ==================== -->
+        <section id="awards" class="px-8 py-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+
+                <!-- Awards -->
+                <div>
+                    <h2 class="editorial-header text-4xl text-primary mb-12 flex items-center gap-4 reveal">
+                        Awards <span class="h-px bg-primary/20 flex-1"></span>
+                    </h2>
+                    <div class="space-y-8">
+                        <div class="bg-tertiary-fixed p-6 rounded-lg flex gap-4 items-start reveal">
+                            <span class="material-symbols-outlined text-tertiary text-4xl mt-1" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-tertiary">Finalist – International Student of the Year</h4>
+                                <p class="text-sm text-tertiary/70">Study Tasmania · 2025</p>
+                            </div>
+                        </div>
+                        <div class="bg-tertiary-fixed p-6 rounded-lg flex gap-4 items-start reveal">
+                            <span class="material-symbols-outlined text-tertiary text-4xl mt-1" style="font-variation-settings: 'FILL' 1;">school</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-tertiary">Best Academic Performer Award (First Year)</h4>
+                                <p class="text-sm text-tertiary/70">School of ICT, University of Tasmania · 2025</p>
+                            </div>
+                        </div>
+                        <div class="bg-tertiary-fixed p-6 rounded-lg flex gap-4 items-start reveal">
+                            <span class="material-symbols-outlined text-tertiary text-4xl mt-1" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+                            <div>
+                                <h4 class="font-bold text-lg text-tertiary">Gold Medal – Bangladesh National Physics Olympiad</h4>
+                                <p class="text-sm text-tertiary/70">17th in the country · 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra-curricular -->
+                <div>
+                    <h2 class="editorial-header text-4xl text-primary mb-12 flex items-center gap-4 reveal">
+                        Leadership <span class="h-px bg-primary/20 flex-1"></span>
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start p-4 border-b border-outline-variant/30 reveal">
+                            <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">shield</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Founder & President</h4>
+                                <p class="text-sm text-on-surface/70">UTAS Cyber Security Club · 2025 – Present</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start p-4 border-b border-outline-variant/30 reveal">
+                            <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">handshake</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Vice Chair</h4>
+                                <p class="text-sm text-on-surface/70">ACS Tasmania Emerging Professional Committee · 2026 – Present</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start p-4 border-b border-outline-variant/30 reveal">
+                            <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">public</span>
+                            <div>
+                                <h4 class="font-bold text-primary">International Student Ambassador</h4>
+                                <p class="text-sm text-on-surface/70">Study Tasmania · 2026 – Present</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start p-4 border-b border-outline-variant/30 reveal">
+                            <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">location_city</span>
+                            <div>
+                                <h4 class="font-bold text-primary">International Student Ambassador</h4>
+                                <p class="text-sm text-on-surface/70">City of Hobart · 2025 – 2026</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start p-4 border-b border-outline-variant/30 reveal">
+                            <span class="material-symbols-outlined text-secondary text-2xl mt-0.5">forum</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Committee Member</h4>
+                                <p class="text-sm text-on-surface/70">School of ICT Course Advisory & Learning and Teaching Committee · 2025 – Present</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="px-8 py-32 bg-primary text-on-primary">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="editorial-header text-4xl sm:text-5xl mb-8 reveal">Let's build something impactful together.</h2>
+                <p class="text-xl opacity-80 mb-12 max-w-2xl mx-auto reveal">Currently open to software engineering internships, graduate roles, and exciting collaboration opportunities. Reach out and say hi!</p>
+                <div class="flex flex-col md:flex-row justify-center gap-8 items-center reveal">
+                    <a class="text-2xl sm:text-3xl font-bold text-secondary-container hover:underline underline-offset-8 break-all" href="mailto:abirhossain.khondoker@utas.edu.au">abirhossain.khondoker@utas.edu.au</a>
+                </div>
+                <div class="flex justify-center gap-6 mt-10 reveal">
+                    <a class="hover:scale-110 transition-transform bg-on-primary/10 p-3 rounded-full" href="https://www.linkedin.com/in/abir-hossain-khondoker/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a class="hover:scale-110 transition-transform bg-on-primary/10 p-3 rounded-full" href="https://github.com/abir-hossain-khondoker" target="_blank" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a class="hover:scale-110 transition-transform bg-on-primary/10 p-3 rounded-full" href="mailto:abirhossain.khondoker@utas.edu.au" aria-label="Email">
+                        <span class="material-symbols-outlined text-3xl">mail</span>
+                    </a>
+                    <a class="hover:scale-110 transition-transform bg-on-primary/10 p-3 rounded-full" href="tel:0410303241" aria-label="Phone">
+                        <span class="material-symbols-outlined text-3xl">call</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#163422] w-full py-12 px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+            <div class="text-[#fdf9ef] font-['Manrope'] text-sm tracking-wide">© 2026 Abir Hossain Khondoker. Built with intent.</div>
+            <div class="flex gap-8">
+                <a class="text-[#fdf9ef]/80 hover:text-[#9b4514] transition-colors font-['Manrope'] text-sm tracking-wide opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/abir-hossain-khondoker/" target="_blank">LinkedIn</a>
+                <a class="text-[#fdf9ef]/80 hover:text-[#9b4514] transition-colors font-['Manrope'] text-sm tracking-wide opacity-80 hover:opacity-100" href="https://github.com/abir-hossain-khondoker" target="_blank">GitHub</a>
+                <a class="text-[#fdf9ef]/80 hover:text-[#9b4514] transition-colors font-['Manrope'] text-sm tracking-wide opacity-80 hover:opacity-100" href="mailto:abirhossain.khondoker@utas.edu.au">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
